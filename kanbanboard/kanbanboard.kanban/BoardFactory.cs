@@ -13,7 +13,7 @@ namespace kanbanboard.kanban
 			{
 				AddColumn(board);
 
-				CopyHeader(boardConfig, board, i);
+				ConfigureColumn(boardConfig, board, i);
 
 				CopyItems(items, board, i);
 			}
@@ -34,9 +34,10 @@ namespace kanbanboard.kanban
 			}
 		}
 
-		static void CopyHeader(BoardConfig boardConfig, Board board, int i)
+		static void ConfigureColumn(BoardConfig boardConfig, Board board, int i)
 		{
 			board.Columns[i].Header = boardConfig.Columns[i].Header;
+			board.Columns[i].WIPLimit = boardConfig.Columns[i].WIPLimit;
 		}
 	}
 }

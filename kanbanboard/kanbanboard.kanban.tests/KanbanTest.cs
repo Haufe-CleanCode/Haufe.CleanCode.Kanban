@@ -69,5 +69,37 @@ namespace kanbanboard.kanban.tests
 			Assert.That(guidPart[4].Length, Is.EqualTo(12));
 
 		}
+
+		[Test]
+		public void CheckWIPLimits()
+		{
+			var boardFactory = new BoardFactory();
+			var kanbanInst = new Kanban();
+
+			var boardConfig = new BoardConfig();
+			var boardConfigColoumn = new BoardConfigColumn();
+			boardConfigColoumn.Header = "Nummer 1";
+			boardConfigColoumn.WIPLimit = 1;
+			var items = new List<List<Item>>();
+			items.Add(new List<Item>());
+
+			boardConfig.Columns.Add(boardConfigColoumn);
+			Board board = boardFactory.CreateBoard(boardConfig, items);
+
+
+			var item = new Item("text", "id");
+			kanbanInst.InsertItem(board, item);
+
+			Assert.That(board.Columns[0].WIPLimitExceeded, Is.False);
+
+			var item2 = new Item("text2", "id2");
+			kanbanInst.InsertItem(board, item2);
+
+			var x = kanbanInst.CheckWIPLimits(board);
+
+			Assert.That(x.Columns[0].WIPLimitExceeded, Is.True);
+
+
+		}
 	}
 }
