@@ -9,7 +9,7 @@ namespace kanbanboard.boardconfig
         public BoardConfig LoadBoardConfig()
         {
             var boardConfig = new BoardConfig();
-            var fileContent = File.ReadAllLines("Board.Config");
+            var fileContent = File.ReadAllLines("bin/Debug/net5.0/Board.Config");
             foreach(var line in fileContent)
             {
                 var newColumn = new BoardConfigColumn();

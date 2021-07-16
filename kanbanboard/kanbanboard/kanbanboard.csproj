@@ -8,6 +8,7 @@
       <ProjectReference Include="..\kanbanboard.boardconfig\kanbanboard.boardconfig.csproj" />
       <ProjectReference Include="..\kanbanboard.contracts\kanbanboard.contracts.csproj" />
       <ProjectReference Include="..\kanbanboard.items\kanbanboard.items.csproj" />
+      <ProjectReference Include="..\kanbanboard.kanban\kanbanboard.kanban.csproj" />
     </ItemGroup>
 
 </Project>
