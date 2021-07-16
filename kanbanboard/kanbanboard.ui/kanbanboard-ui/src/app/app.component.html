@@ -2,13 +2,13 @@
   <div class="container board" *ngIf="columns$ | async as columns">
     <div class="row">
       <div class="col" *ngFor="let column of columns">
-        {{column.header | uppercase}}
+        <span [class]="column.wipLimitExceeded ? 'danger' : ''">{{column.header | uppercase}}</span>
+                <span *ngIf="column.wipLimit > 0"> ({{column.wipLimit}})</span>
       </div>
     </div>
     <div class="row" *ngFor="let row of getRowCount(columns); let i = index;">
       <div class="col"  *ngFor="let column of columns" (click)="setSelectedItem(column.items[i])">
-        <span [class]="column.wipLimitExceeded ? 'danger' : ''">{{ column.items[i]?.text }} </span>
-        <span *ngIf="column.wipLimit > 0">({{column.wipLimit}})</span>
+        {{ column.items[i]?.text }}
       </div>
     </div>
   </div>
