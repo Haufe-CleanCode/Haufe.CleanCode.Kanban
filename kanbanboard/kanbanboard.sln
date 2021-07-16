@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanbanboard", "kanbanboard\kanbanboard.csproj", "{42E5F5C7-77F9-482C-92A1-11B2134C3F8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanbanboard.contracts", "kanbanboard.contracts\kanbanboard.contracts.csproj", "{46691C58-D140-41D2-AFAE-C025F1A84D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{42E5F5C7-77F9-482C-92A1-11B2134C3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42E5F5C7-77F9-482C-92A1-11B2134C3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42E5F5C7-77F9-482C-92A1-11B2134C3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46691C58-D140-41D2-AFAE-C025F1A84D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46691C58-D140-41D2-AFAE-C025F1A84D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46691C58-D140-41D2-AFAE-C025F1A84D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46691C58-D140-41D2-AFAE-C025F1A84D5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
