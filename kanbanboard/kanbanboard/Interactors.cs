@@ -21,15 +21,15 @@ namespace kanbanboard
         }
 
         public Board UpdateItem(string id, string text) {
-            throw new NotImplementedException();
+            return _board;
         }
 
         public Board DeleteItem(string id) {
-            throw new NotImplementedException();
+            return _board;
         }
 
         public Board MoveItem(string id, Direction direction) {
-            throw new NotImplementedException();
+            return _board;
         }
     }
 }
