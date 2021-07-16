@@ -27,8 +27,24 @@ export class AppComponent implements OnInit{
     return new Array(Math.max.apply(Math, columns.map(c => c.items.length)));
   }
 
-  setSelectedItem(item: Item): void {
+  setSelectedItem(item: Item | undefined): void {
     this.selectedItemText = item?.text || undefined;
     this.selectedItemId  = item?.id || undefined;
   }
+
+  createItem(): void {
+    this.columns$ = this.apiService.createItem(this.selectedItemText!);
+    this.setSelectedItem(undefined);
+  }
+
+  updateItem(): void {
+    this.columns$ = this.apiService.updateItem(this.selectedItemId!, this.selectedItemText!);
+    this.setSelectedItem(undefined);
+  }
+
+  deleteItem(): void {
+    this.columns$ = this.apiService.deleteItem(this.selectedItemId!);
+    this.setSelectedItem(undefined);
+  }
+
 }

@@ -1,8 +1,9 @@
 <div class="m-5">
-  <div class="container" *ngIf="columns$ | async as columns">
+  <div class="container board" *ngIf="columns$ | async as columns">
     <div class="row">
       <div class="col" *ngFor="let column of columns">
-        {{column.header | uppercase}}
+        <span [class]="column.wipLimitExceeded ? 'danger' : ''">{{column.header | uppercase}}</span>
+                <span *ngIf="column.wipLimit > 0"> ({{column.wipLimit}})</span>
       </div>
     </div>
     <div class="row" *ngFor="let row of getRowCount(columns); let i = index;">
@@ -13,11 +14,33 @@
   </div>
   <div class="container">
     <div class="row">
-      <form>
-          <div class="form-group">
-            <textarea name="selectedItemText" class="form-control" id="selectedItemText" rows="10" [(ngModel)]="selectedItemText"></textarea>
+      <div class="col-8">
+        <form>
+            <div class="form-group">
+              <textarea name="selectedItemText" class="form-control" id="selectedItemText" rows="10" [(ngModel)]="selectedItemText"></textarea>
+            </div>
+        </form>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary mb-3" (click)="createItem()">NEW</button>
           </div>
-      </form>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary mb-3" (click)="updateItem()" [disabled]="!this.selectedItemId">UPDATE</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary" (click)="deleteItem()" [disabled]="!this.selectedItemId">DELETE</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+
+      </div>
     </div>
   </div>
 </div>

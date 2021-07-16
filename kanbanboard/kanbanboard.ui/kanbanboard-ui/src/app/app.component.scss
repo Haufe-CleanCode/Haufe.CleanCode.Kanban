@@ -1,7 +1,12 @@
-.col {
+.board .col {
   border: 1px solid rgba(86,61,124,.2);
 }
 
 .container {
   padding: 1.5rem;
+}
+
+span.danger {
+  color: red;
+  font-weight: bold;
 }
