@@ -1,10 +1,6 @@
 ﻿using NUnit.Framework;
-using kanbanboard.boardconfig;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace kanbanboard.boardconfig.Tests
 {

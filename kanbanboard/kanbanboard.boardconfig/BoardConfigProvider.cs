@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using kanbanboard.contracts;
+using System;
 using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using kanbanboard.contracts;
 
 namespace kanbanboard.boardconfig
 {
