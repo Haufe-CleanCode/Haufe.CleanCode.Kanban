@@ -7,7 +7,8 @@
     </div>
     <div class="row" *ngFor="let row of getRowCount(columns); let i = index;">
       <div class="col"  *ngFor="let column of columns" (click)="setSelectedItem(column.items[i])">
-        {{ column.items[i]?.text }}
+        <span [class]="column.wipLimitExceeded ? 'danger' : ''">{{ column.items[i]?.text }} </span>
+        <span *ngIf="column.wipLimit > 0">({{column.wipLimit}})</span>
       </div>
     </div>
   </div>
