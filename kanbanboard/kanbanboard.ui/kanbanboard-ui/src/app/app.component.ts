@@ -13,6 +13,8 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent implements OnInit{
   columns$: Observable<Column[]> = this.apiService.getBoard();
+  selectedItemText: string | undefined;
+  selectedItemId: string | undefined;
 
   constructor(private apiService: ApiService) {}
 
@@ -25,4 +27,8 @@ export class AppComponent implements OnInit{
     return new Array(Math.max.apply(Math, columns.map(c => c.items.length)));
   }
 
+  setSelectedItem(item: Item): void {
+    this.selectedItemText = item?.text || undefined;
+    this.selectedItemId  = item?.id || undefined;
+  }
 }
