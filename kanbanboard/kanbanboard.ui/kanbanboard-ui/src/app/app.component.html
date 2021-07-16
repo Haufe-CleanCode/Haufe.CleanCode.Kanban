@@ -1,16 +1,14 @@
 <div class="m-5">
-  <div class="container">
+  <div class="container" *ngIf="columns$ | async as columns">
     <div class="row">
-      <div class="col">
-        One of three columns
+      <div class="col" *ngFor="let column of columns">
+        {{column.header | uppercase}}
       </div>
-      <div class="col">
-        One of three columns
-      </div>
-      <div class="col">
-        One of three columns
+    </div>
+    <div class="row" *ngFor="let row of getRowCount(columns); let i = index;">
+      <div class="col"  *ngFor="let column of columns">
+        {{ column.items[i]?.text }}
       </div>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>

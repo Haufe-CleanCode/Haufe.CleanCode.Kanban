@@ -2,7 +2,9 @@ import { Observable } from 'rxjs';
 
 import { Component, OnInit } from '@angular/core';
 
-import { Board } from './model/bord-model';
+import { Column } from './model/column-model';
+import { Item } from './model/item-model';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +12,17 @@ import { Board } from './model/bord-model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  board$: Observable<Board>;
+  columns$: Observable<Column[]> = this.apiService.getBoard();
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.loadBoard();
   }
 
-  loadBoard(): void {
-
+  public getRowCount(columns: Column[]): any[] {
+    if(!columns) return [];
+    console.log(columns);
+    return new Array(Math.max.apply(Math, columns.map(c => c.items.length)));
   }
 
 }
