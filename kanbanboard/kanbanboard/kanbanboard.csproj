@@ -5,7 +5,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\kanbanboard.boardconfig\kanbanboard.boardconfig.csproj" />
       <ProjectReference Include="..\kanbanboard.contracts\kanbanboard.contracts.csproj" />
+      <ProjectReference Include="..\kanbanboard.items\kanbanboard.items.csproj" />
     </ItemGroup>
 
 </Project>
