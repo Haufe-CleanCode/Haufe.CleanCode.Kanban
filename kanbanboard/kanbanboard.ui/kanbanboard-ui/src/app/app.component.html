@@ -7,8 +7,8 @@
       </div>
     </div>
     <div class="row" *ngFor="let row of getRowCount(columns); let i = index;">
-      <div class="col"  *ngFor="let column of columns" (click)="setSelectedItem(column.items[i])">
-        <span class="truncate">{{ column.items[i]?.text }}</span>
+      <div class="col"  *ngFor="let column of columns" >
+        <div class="card" (click)="setSelectedItem(column.items[i])" *ngIf="column.items[i]"><span class="truncate">{{ column.items[i]?.text }}</span></div>
       </div>
     </div>
   </div>

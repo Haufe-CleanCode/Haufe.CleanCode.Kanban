@@ -11,6 +11,15 @@
 }
 }
 
+.card {
+  padding: 1rem;
+
+  &:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+}
+
 .container {
   padding: 1.5rem;
 }
