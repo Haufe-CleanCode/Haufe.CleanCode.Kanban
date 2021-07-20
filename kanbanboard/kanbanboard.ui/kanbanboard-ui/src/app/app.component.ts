@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -12,13 +12,14 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  columns$: Observable<Column[]> = this.apiService.getBoard();
+  columns$: Observable<Column[]> = of([]);
   selectedItemText: string | undefined;
   selectedItemId: string | undefined;
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
+    this.columns$ = this.apiService.getBoard();
   }
 
   public getRowCount(columns: Column[]): any[] {

@@ -28,7 +28,7 @@ namespace kanbanboard.kanban
 
 		private static void CopyItems(List<List<Item>> items, Board board, int i)
 		{
-			while(items.Count < i )
+			while(items.Count <= i )
 			{
 				items.Add(new List<Item>());
 			}
