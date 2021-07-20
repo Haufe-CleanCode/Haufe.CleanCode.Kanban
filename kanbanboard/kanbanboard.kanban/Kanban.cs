@@ -18,6 +18,9 @@ namespace kanbanboard.kanban
 			{
 				coloumn.WIPLimitExceeded = false;
 
+				if (coloumn.WIPLimit == 0)
+					return board;
+
 				if ( coloumn.Items.Count > coloumn.WIPLimit )
 				{
 					coloumn.WIPLimitExceeded = true;
